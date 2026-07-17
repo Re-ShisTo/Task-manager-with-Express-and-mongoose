@@ -28,7 +28,8 @@ app.use(limiter);
 app.set("etag", false);
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://Re_ShisTo7053R:%23CP77%237053R%23@novelty1.kr5q6zv.mongodb.net/", {autoIndex: true})
+const mongodb_uri = process.env.MONGODB_URI;
+mongoose.connect(mongodb_uri, {autoIndex: true})
     .then(()=>{
         console.log("MongoDB Connected Successfully");
     })
